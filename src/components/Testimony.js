@@ -1,23 +1,20 @@
 import React from "react";
+import "../stylesheets/Testimony.css";
 
-function Testimony() {
+function Testimony(props) {
   return (
     <div className="testimonyContainer">
       <img
         className="testimonyImage"
-        src={require("../images/testimony-emma.png")}
+        src={require(`../images/testimony-${props.image}.png`)}
         alt="Testimony Image"
       />
       <div className="textTestimonyContainer">
-        <p className="testimonyName">Jennifer Karlson</p>
-        <p className="testimonyWork">Blockchain Developer</p>
-        <p className="testimonyText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor
-          odio id viverra porttitor. Duis convallis, ante id varius finibus,
-          sapien leo lobortis elit, vitae hendrerit massa neque eget libero. In
-          sed lobortis neque, nec gravida massa. Integer ipsum lectus, sodales
-          et gravida in, dignissim vel dui.
+        <p className="testimonyName">
+          <strong>{props.name}</strong>
         </p>
+        <p className="testimonyWork">{props.work}</p>
+        <p className="testimonyText">{props.testimony}</p>
       </div>
     </div>
   );
